@@ -11,8 +11,9 @@ class NavbarWidget extends StatefulWidget {
   _NavbarWidgetState createState() => _NavbarWidgetState();
 }
 
-class _NavbarWidgetState extends State<NavbarWidget> {
-  String _selectedRoute = "/app/home";
+class _NavbarWidgetState extends State<NavbarWidget> with RouteAware {
+
+  String _selectedRoute = "/home";
 
   void _onSelectRoute(String route) {
     setState(() {
@@ -35,7 +36,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
   }
 
   List<Widget> _generateChildren() {
-    return routesConst.appRoutes().map((route) {
+    return routesConst.routesInNavbar().map((route) {
       return Container(
         child: _generateButton(route),
       );
