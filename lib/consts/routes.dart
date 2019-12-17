@@ -57,7 +57,7 @@ class RoutesConst {
       {
         "name": "הודעות",
         "icon": "a",
-        "route": "/notifications",
+        "route": "/home",
       },
       {
         "name": "בית",
@@ -67,9 +67,13 @@ class RoutesConst {
       {
         "name": "חשבון",
         "icon": "c",
-        "route": "/account",
+        "route": "/signin",
       },
     ];
+  }
+
+  bool isInNavbar(String route) {
+    return routesInNavbar().any((routeDetails) => routeDetails["route"] == route);
   }
 
 }

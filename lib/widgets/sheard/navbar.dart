@@ -4,21 +4,21 @@ import 'package:roeah_ruchani_app/consts/routes.dart';
 import 'package:roeah_ruchani_app/widgets/core/button.dart';
 
 class NavbarWidget extends StatefulWidget {
-  NavbarWidget({this.child});
-  final Widget child;
+  NavbarWidget({this.navigatorKey});
+  final GlobalKey<NavigatorState> navigatorKey;
 
   @override
   _NavbarWidgetState createState() => _NavbarWidgetState();
 }
 
-class _NavbarWidgetState extends State<NavbarWidget> with RouteAware {
+class _NavbarWidgetState extends State<NavbarWidget> {
 
   String _selectedRoute = "/home";
 
   void _onSelectRoute(String route) {
     setState(() {
       _selectedRoute = route;
-      Navigator.pushNamed(context, route);
+      widget.navigatorKey.currentState.pushNamed(route);
     });
   }
 
