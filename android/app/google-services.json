@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "909908906050",
+    "firebase_url": "https://tzurba-reoeah-ruchani.firebaseio.com",
+    "project_id": "tzurba-reoeah-ruchani",
+    "storage_bucket": "tzurba-reoeah-ruchani.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909908906050:android:e6f5c5658673ba8bfc1ddb",
+        "android_client_info": {
+          "package_name": "com.example.roeah_ruchani_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909908906050-6m6hlc91jnk1oh0hikmoufamjp57pebp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.roeah_ruchani_app",
+            "certificate_hash": "a56a353d2a84975186b60fc6affddecabe470128"
+          }
+        },
+        {
+          "client_id": "909908906050-jjsvs1ceul0pv0uu6ushs25r784psg4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuSdA5EIB_c_Mk9rcbzHpjjJUYQcCDkMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909908906050-jjsvs1ceul0pv0uu6ushs25r784psg4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

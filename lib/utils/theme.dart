@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class ThemeUtil {
   // colors
@@ -10,60 +11,18 @@ class ThemeUtil {
   // typography
   final String font = "Rubik";
 
-  getTheme() {
+  getTheme(BuildContext context) {
     return ThemeData(
       // colors
-      brightness: Brightness.dark,
       primaryColor: primaryColor,
       accentColor: secondaryColor,
       cursorColor: textColor,
       backgroundColor: backgroundColor,
       canvasColor: backgroundColor,
       // typography
-      textTheme: TextTheme(
-        headline: TextStyle(
-          fontFamily: font,
-          fontSize: 65,
-          color: textColor,
-        ),
-        title: TextStyle(
-          fontFamily: font,
-          fontSize: 32,
-          color: primaryColor,
-        ),
-        subtitle: TextStyle(
-          fontFamily: font,
-          fontSize: 16,
-          color: textColor,
-        ),
-        display1: TextStyle(
-          fontFamily: font,
-          fontSize: 34,
-          color: textColor,
-        ),
-        body1: TextStyle(
-          fontFamily: font,
-          fontSize: 18,
-          color: textColor,
-        ),
-        body2: TextStyle(
-          fontFamily: font,
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
-          color: textColor,
-        ),
-        button: TextStyle(
-          fontFamily: font,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          color: textColor,
-        ),
-        caption: TextStyle(
-          fontFamily: font,
-          fontSize: 14,
-          color: textColor,
-        ),
-      ),
+      // textTheme: GoogleFonts.rubikTextTheme(
+      //   Theme.of(context).textTheme,
+      // ),
     );
   }
 }
