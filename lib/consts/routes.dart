@@ -62,7 +62,7 @@ class RoutesConst {
       {
         "name": "בית",
         "icon": "b",
-        "route": "/home",
+        "route": "/signup",
       },
       {
         "name": "חשבון",

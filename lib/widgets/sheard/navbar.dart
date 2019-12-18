@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:roeah_ruchani_app/consts/routes.dart';
-import 'package:roeah_ruchani_app/widgets/core/button.dart';
+import 'package:roeah_ruchani_app/widgets/core/clippedView.dart';
+import 'package:roeah_ruchani_app/widgets/sheard/navbarItem.dart';
 
 class NavbarWidget extends StatefulWidget {
   NavbarWidget({this.navigatorKey});
@@ -12,7 +13,6 @@ class NavbarWidget extends StatefulWidget {
 }
 
 class _NavbarWidgetState extends State<NavbarWidget> {
-
   String _selectedRoute = "/home";
 
   void _onSelectRoute(String route) {
@@ -25,13 +25,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
   Widget _generateButton(Map<String, dynamic> route) {
     String text = _selectedRoute == route["route"] ? route["name"] : "";
     text += route["icon"];
-    return AnimatedContainer(
-      padding: EdgeInsets.symmetric(horizontal: 32),
-      duration: Duration(milliseconds: 500),
-      child: ButtonWidget(
-        onPressed: () => _onSelectRoute(route["route"]),
-        child: Text(text),
-      ),
+    return NavbarItemWidget(
+      onTap: () {_onSelectRoute(route["route"]);},
+      icon: Icons.home,
+      title: route["name"],
+      isSelected: _selectedRoute == route["route"],
     );
   }
 
@@ -46,27 +44,28 @@ class _NavbarWidgetState extends State<NavbarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 64,
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        decoration: BoxDecoration(
-          color: Theme.of(context).bottomAppBarColor,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 16.0,
-              spreadRadius: 5.0,
-              offset: Offset(0, 15),
-            )
-          ],
+      height: 64,
+      // padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).bottomAppBarColor,
+        // color: Colors.green,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 16.0,
+            spreadRadius: 5.0,
+            offset: Offset(0, 15),
+          )
+        ],
+      ),
+      alignment: Alignment.center,
+      child: ClippedViewWidget(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: _generateChildren(),
         ),
-        child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            mainAxisSize: MainAxisSize.max,
-            children: _generateChildren(),
-          ),
-        ));
+      ),
+    );
   }
 }
