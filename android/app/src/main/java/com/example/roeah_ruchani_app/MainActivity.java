@@ -1,4 +1,4 @@
-package com.example.roeah_ruchani_app;
+package com.zektec.roeah_ruchani_app;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
